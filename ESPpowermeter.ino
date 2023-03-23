@@ -1,9 +1,9 @@
 /*
   Arduino IDE Project for ESP8266 Board
 
-  This is an simple project for ESP8266 (NodeMCU 1.1 ESP-12E) Module. 
+  This is an powermeter project for ESP8266 (NodeMCU 1.1 ESP-12E) Module. 
   Webserver providing a few Endpoints for analog meassurement from adc (TC-9520256 / TA12-200)
-  for sinusoidal power consumption 
+  for sinus and non sinus power consumption 
   
   by Peter Lorenz
   support@peter-ebe.de
@@ -183,7 +183,7 @@ void setup(void) {
   startWifi();
 
   // MDNS
-  if (MDNS.begin("esp8266")) {
+  if (MDNS.begin("espPowermeter")) {
     Serial.println("MDNS responder started");
   }
 
