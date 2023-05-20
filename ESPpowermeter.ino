@@ -39,16 +39,21 @@ void handleRoot() {
   Serial.println("handleRoot()");
   digitalWrite(LED_BUILTIN, LOW);   // Turn the LED on (Note that LOW is the voltage level
 
-  String message = "esp8266 powermeter online\r\n";
+  String message = "esp8266 powermeter online<br>";
 
   message += "Connected to ";
   message += String(ssid);
-  message += "\r\n";
+  message += "<br>";
   message += "IP address: ";
   message += String(WiFi.localIP().toString());
-  message += "\r\n";
+  message += "<br>";
+  message += "<br>";
+  message += "<a href='/avgDo'>Messen(Mittelwert)</a>";
+  message += "<br>";
+  message += "<a href='/avgFetchPower'>Messwert abrufen</a>";
+  message += "<br>";
 
-  server.send(200, "text/plain", message);
+  server.send(200, "text/html", message);
 
   digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
 }
