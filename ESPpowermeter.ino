@@ -89,7 +89,10 @@ void handleCurrentPower() {
   Serial.println("Power");
   Serial.println(power);
 
-  String message = String(power);
+  String message = "0";
+  if (power > 10) {
+    message = String(power); 
+  }
   server.send(200, "text/plain", message);
   digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
 }
@@ -127,7 +130,10 @@ void handleAvgPower() {
   Serial.println("Power");
   Serial.println(power);
 
-  String message = String(power);
+  String message = "0";
+  if (power > 10) {
+    message = String(power); 
+  }
   server.send(200, "text/plain", message);
   digitalWrite(LED_BUILTIN, HIGH);  // Turn the LED off by making the voltage HIGH
 }
