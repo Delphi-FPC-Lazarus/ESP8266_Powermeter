@@ -138,13 +138,19 @@ int getMeasurementMean() {
 // Messfunktion (Wrapper)
 // --------------------------------------------
 
-// Skalierung passend zum eingeseetzten getMeasurement() und Modul TA12-200
+// Skalierung zum eingeseetzten getMeasurement() und Modul TA12-200
+// NICHT Liniar, stimmt nur um den Kalibierwert, da muss ne kurve mit stützwerten rein
 //#define CALCURRENTPOWER 360
 //#define CALCURRENTVALUE 90
 
-// Skalierung passend zum eingeseetzten getMeasurement() und Modul TA12-100
-#define CALCURRENTPOWER 940
-#define CALCURRENTVALUE 125
+// Skalierung zum eingeseetzten getMeasurement() und Modul TA12-100
+// NICHT Liniar, stimmt nur um den Kalibierwert, da muss ne kurve mit stützwerten rein
+//#define CALCURRENTPOWER 940
+//#define CALCURRENTVALUE 125
+//#define CALCURRENTPOWER 590
+//#define CALCURRENTVALUE 77
+#define CALCURRENTPOWER 130
+#define CALCURRENTVALUE 23
 
 int getMeasurement() {
   Serial.println("getMeasurement()");
