@@ -138,9 +138,13 @@ int getMeasurementMean() {
 // Messfunktion (Wrapper)
 // --------------------------------------------
 
-// Skalierung passend zum eingeseetzten getMeasurement()
-#define CALCURRENTPOWER 360
-#define CALCURRENTVALUE 90
+// Skalierung passend zum eingeseetzten getMeasurement() und Modul TA12-200
+//#define CALCURRENTPOWER 360
+//#define CALCURRENTVALUE 90
+
+// Skalierung passend zum eingeseetzten getMeasurement() und Modul TA12-100
+#define CALCURRENTPOWER 940
+#define CALCURRENTVALUE 125
 
 int getMeasurement() {
   Serial.println("getMeasurement()");
