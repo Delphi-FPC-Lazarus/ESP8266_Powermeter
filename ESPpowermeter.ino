@@ -15,6 +15,7 @@
 #include <ESP8266mDNS.h>
 
 #include "ESPpowermeter_measurement.h"
+#include "ESPpowermeter_calibration.h"
 #include "WLANZUGANGSDATEN.h"
 
 const char* ssid = STASSID;
@@ -86,7 +87,7 @@ void handleCurrentPower() {
   int value = getMeasurement();
   Serial.println("Value:");
   Serial.println(value);
-  float power = float(CALCURRENTPOWER)/float(CALCURRENTVALUE) * value;
+  int power = getPowerFromValue(value);
   Serial.println("Power");
   Serial.println(power);
 
@@ -127,7 +128,7 @@ void handleAvgPower() {
   int value = avgValue;
   Serial.println("Value:");
   Serial.println(value);
-  float power = float(CALCURRENTPOWER)/float(CALCURRENTVALUE) * value;
+  int power = getPowerFromValue(value);
   Serial.println("Power");
   Serial.println(power);
 
