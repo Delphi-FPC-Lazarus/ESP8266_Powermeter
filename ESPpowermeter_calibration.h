@@ -7,14 +7,20 @@ struct _calibrationvalue {
 };
 
 // Skalierung zum eingeseetzten getMeasurement() und Modul TA12-200
-/*
-const int calibrationvaluecount = 2;
+const int calibrationvaluecount = 9;
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
-  {90,360}
+  {9,37},
+  {16,75},
+  {24,112},
+  {31,150},
+  {39,187},
+  {47,225},
+  {54,262},
+  {62,300}
 };
-*/
 
+/*
 // Skalierung zum eingeseetzten getMeasurement() und Modul TA12-100
 const int calibrationvaluecount = 4;
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
@@ -23,6 +29,7 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {77,590},
   {125,940}
 };
+*/
 
 int getPowerFromValue(int value) {
   // suche Eintrag <= Value und >= Value
