@@ -22,8 +22,8 @@ const char* ssid = STASSID;
 const char* password = STAPSK;
 
 // Set your Static IP address
-IPAddress local_IP(192, 168, 1, 240);
-//IPAddress local_IP(192, 168, 1, 242);
+//IPAddress local_IP(192, 168, 1, 240);
+IPAddress local_IP(192, 168, 1, 242);
 // Set your Gateway IP address
 IPAddress gateway(192, 168, 1, 1);
 

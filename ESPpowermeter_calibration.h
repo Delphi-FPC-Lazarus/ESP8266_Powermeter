@@ -6,10 +6,12 @@ struct _calibrationvalue {
   int power;
 };
 
+/*
 // Skalierung zum eingeseetzten getMeasurement() und Modul TA12-200
-const int calibrationvaluecount = 9;
+const int calibrationvaluecount = 10;
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
+  {5,5},
   {9,37},
   {16,75},
   {24,112},
@@ -19,17 +21,17 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {54,262},
   {62,300}
 };
+*/
 
-/*
-// Skalierung zum eingeseetzten getMeasurement() und Modul TA12-100
-const int calibrationvaluecount = 4;
+// Skalierung zum eingeseetzten getMeasurement() und Modul TA12-100 (Messmodul des Akuus)
+const int calibrationvaluecount = 5;
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
+  {5,5},
   {25,130},
   {77,590},
   {125,940}
 };
-*/
 
 int getPowerFromValue(int value) {
   // suche Eintrag <= Value und >= Value
