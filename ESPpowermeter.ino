@@ -18,12 +18,16 @@
 #include "ESPpowermeter_calibration.h"
 #include "WLANZUGANGSDATEN.h"
 
+// define from external header file
 const char* ssid = STASSID;
 const char* password = STAPSK;
 
+// Define Hostname (will be set after network start)
+const char* hostname = "esppowermeter2";
+
 // Set your Static IP address
-//IPAddress local_IP(192, 168, 1, 240);
-IPAddress local_IP(192, 168, 1, 242);
+IPAddress local_IP(192, 168, 1, 230);
+//IPAddress local_IP(192, 168, 1, 242);
 // Set your Gateway IP address
 IPAddress gateway(192, 168, 1, 1);
 
@@ -196,7 +200,7 @@ void setup(void) {
   startWifi();
 
   // MDNS
-  if (MDNS.begin("espPowermeter")) {
+  if (MDNS.begin(hostname)) {
     Serial.println("MDNS responder started");
   }
 
