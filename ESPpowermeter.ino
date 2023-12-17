@@ -16,18 +16,17 @@
 
 #include "ESPpowermeter_measurement.h"
 #include "ESPpowermeter_calibration.h"
-#include "WLANZUGANGSDATEN.h"
 
-// define from external header file
+// Include define from external header file
+#include "WLANZUGANGSDATEN.h"
 const char* ssid = STASSID;
 const char* password = STAPSK;
-
-// Define Hostname (will be set after network start)
-const char* hostname = "esppowermeter2";
+const char* hostname = STAHOSTNAME;
+const uint8_t  hostip = 242;
 
 // Set your Static IP address
-IPAddress local_IP(192, 168, 1, 230);
-//IPAddress local_IP(192, 168, 1, 242);
+IPAddress local_IP(192, 168, 1, hostip);
+
 // Set your Gateway IP address
 IPAddress gateway(192, 168, 1, 1);
 
