@@ -22,7 +22,7 @@
 const char* ssid = STASSID;
 const char* password = STAPSK;
 const char* hostname = STAHOSTNAME;
-const uint8_t  hostip = 242;
+const uint8_t  hostip = STAHOSTIP;
 
 // Set your Static IP address
 IPAddress local_IP(192, 168, 1, hostip);
