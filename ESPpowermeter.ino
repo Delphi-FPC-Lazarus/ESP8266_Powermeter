@@ -52,6 +52,9 @@ void handleRoot() {
   message += "IP address: ";
   message += String(WiFi.localIP().toString());
   message += "<br>";
+  message += "Hostname: ";
+  message += STAHOSTNAME;
+  message += "<br>";
   message += "<br>";
   message += "<a href='/avgDo'>Messen(Mittelwert)</a>";
   message += "<br>";
