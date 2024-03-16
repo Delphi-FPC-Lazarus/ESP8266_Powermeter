@@ -24,7 +24,20 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
 */
 
 // Skalierung zum eingeseetzten getMeasurement() und Modul TA12-100 (Messmodul des Akuus)
-const int calibrationvaluecount = 5;
+
+// für Solar Garage 
+const int calibrationoffset = 7; // für die Kalibrierung auf 0 setzen
+const int calibrationvaluecount = 3; // tabelle nach offsetkorrektur
+const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
+  {0,0},
+  {5,5},
+  {124-calibrationoffset,959}
+};
+
+/*
+// für Akkusystemcontroller (noch mal mit offset neueinzumessen)
+const int calibrationoffset = 0; // für die Kalibrierung auf 0 setzen
+const int calibrationvaluecount = 5;  // tabelle nach offsetkorrektur
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
   {5,5},
@@ -32,9 +45,11 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {77,590},
   {125,940}
 };
+*/
 
 int getPowerFromValue(int value) {
   // suche Eintrag <= Value und >= Value
+  value = value - calibrationoffset;
   int ilow=-1;
   int ihigh=-1;
   for (int i = 0; i < calibrationvaluecount; i++) {
