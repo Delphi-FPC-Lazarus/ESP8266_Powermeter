@@ -8,6 +8,7 @@ struct _calibrationvalue {
 
 /*
 // Skalierung zum eingeseetzten getMeasurement() und Modul TA12-200
+const int calibrationoffset = 0; // für die Kalibrierung auf 0 setzen
 const int calibrationvaluecount = 10;
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
@@ -20,6 +21,7 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {47,225},
   {54,262},
   {62,300}
+  //{100+calibrationoffset,500}
 };
 */
 
@@ -31,7 +33,7 @@ const int calibrationvaluecount = 3; // tabelle nach offsetkorrektur
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
   {5,5},
-  {124-calibrationoffset,959}
+  {100+calibrationoffset,1000}
 };
 
 /*
