@@ -38,14 +38,23 @@ const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
 };
 */
 
-// für Akkusystemcontroller (noch mal mit offset neueinzumessen)
+// für Akkusystemcontroller
 const int calibrationoffset = 0; // für die Kalibrierung auf 0 setzen
-const int calibrationvaluecount = 5;  // tabelle nach offsetkorrektur
+const int calibrationvaluecount = 13;  // tabelle nach offsetkorrektur
 const _calibrationvalue calibrationvalues[calibrationvaluecount] = {
   {0,0},
   {5,5},
-  {77,590},
-  {125,940}
+  {6,23},
+  {8,52},
+  {11,75},
+  {15,102},
+  {18,128},
+  {21,153},
+  {25,178},
+  {29,205},
+  {37,229},
+  {43,238},
+  {77,580}
 };
 
 int getPowerFromValue(int value) {
