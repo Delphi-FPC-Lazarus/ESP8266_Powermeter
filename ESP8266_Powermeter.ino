@@ -12,6 +12,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266HTTPUpdateServer.h>
 #include <ESP8266mDNS.h>
 
 #include "ESPpowermeter_measurement.h"
@@ -35,6 +36,7 @@ IPAddress primaryDNS(192, 168, 1, 1);   //optional
 IPAddress secondaryDNS(192, 168, 1, 1); //optional
 
 ESP8266WebServer server(80);
+ESP8266HTTPUpdateServer updateserver;
 
 // --------------------------------------------
 // Handler Webserver 
@@ -226,6 +228,7 @@ void setup(void) {
   });
   */
 
+  updateserver.setup(&server);
   server.begin();
   Serial.println("HTTP server started");
 }
